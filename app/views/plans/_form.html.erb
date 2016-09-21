@@ -1,0 +1,30 @@
+
+  <% if @plan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@plan.errors.count, "error") %> prohibited this plan from being saved:</h2>
+
+      <ul>
+      <% @plan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<%= simple_form_for @plan, :html => { :class => 'form-horizontal' , :id => 'form-lessons'} do |f| %>
+  <div class="field">
+    <%= f.input :name %><br>
+  </div>
+  <div class="field">
+    <%= f.input :budget %><br>
+  </div>
+  <div class="field">
+    <%= f.input :start_date %><br>
+  </div>
+  <div class="field">
+    <%= f.input :description %><br>
+  </div>
+  <%= hidden_field_tag(:id_user, params[:id_user]) %>
+  <div class="actions">
+    <%= f.button :submit, "Guardar" %>
+  </div>
+<%end%>

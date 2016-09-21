@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>App</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <nav class="layout-format">
+      <tr>
+        <% if logged_in? %>
+          <td>
+            <%=link_to "VBIT", current_user, class:"font-style"%>
+          </td>
+          <td>
+            <%=link_to "Planes", plans_path, class:"font-style"%>
+          </td>
+          <td>
+            <%=link_to "Perfil", current_user, class:"font-style"%>
+          </td>
+          <td>
+            <%=link_to "Cerrar sesion", logout_path, class:"font-style", method: "delete"%>
+          </td>
+        <%else%>
+        <td>
+          <%=link_to "VBIT", login_path, class:"font-style"%>
+        </td>
+        <td>
+          <%=link_to "Registrarse", new_user_path, class:"a-lot-to-right"%>
+        </td>
+        <td>
+          <%=link_to "¿Quienes somos?", current_user, class:"to-right"%>
+        </td>
+        <td>
+          <%=link_to "Contaco", logout_path, class:"to-right", method: "delete"%>
+        </td>
+        <%end%>
+
+
+      </tr>
+
+    </nav>
+
+
+<%= yield %>
+
+</body>
+</html>

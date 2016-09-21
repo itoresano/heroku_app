@@ -1,0 +1,28 @@
+  <% if @category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+      <% @category.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= simple_form_for @category, :html => { :class => 'form-horizontal' , :id => 'form-lessons'} do |f| %>
+  <div class="form-inputs">
+     <%= f.input :name %>
+     <br />
+     <%= f.input :description %>
+     <br />
+     <%= f.input :budget %>
+</div>
+     <%= hidden_field_tag(:id_plan, params[:id_plan]) %>
+     <br />
+     <div class="form-actions row">
+       <div class="col-sm-offset-3 col-sm-9">
+         <%= f.button :submit, "Guardar", class: 'btn btn-primary btn-block'  %>
+       </div>
+     </div>
+
+  <% end %>

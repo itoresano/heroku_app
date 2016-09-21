@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= current_user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= current_user.email %>
+</p>
+
+<p>
+  <strong>Date birth:</strong>
+  <%= current_user.date_birth %>
+</p>
+
+<p>
+  <strong>Budget:</strong>
+  <%= current_user.budget %>
+</p>
+
+<h1>Planes para <%= current_user.name %></h1>
+<table style="width:100%" class="table-design">
+  <tr class="header-design">
+    <th class="header-element-design">Nombre</th>
+    <th class="header-element-design">Fecha de inicio</th>
+    <th class="header-element-design">Presupuesto</th>
+  </tr>
+  <% @plans.each do |plan|%>
+  <tr class="header-design">
+    <td class="normal-element-design"><%= link_to plan.name, plan%></td>
+    <td class="normal-element-design"><%= plan.start_date%></td>
+    <td class="normal-element-design"><%= plan.budget%></td>
+  </tr>
+  <% end%>
+</table>
+<%= link_to "Agregar nuevo plan", new_plan_path(id_user: @user.id) %>
+
+<h1>Principales gastos</h1>
+
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |

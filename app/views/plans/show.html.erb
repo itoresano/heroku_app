@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Name:</strong>
+  <%= @plan.name %>
+</p>
+
+
+<p>
+  <strong>Start date:</strong>
+  <%= @plan.start_date %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @plan.description %>
+</p>
+
+<p>
+  <strong>Budget:</strong>
+  <%= @plan.budget %>
+</p>
+
+<p>
+  <strong>Total gastado en este plan:</strong>
+  <%= plan_total_spent_for @plan %>
+</p>
+
+<p>
+  <strong>Balance del plan:</strong>
+  <%= plan_balance_for @plan %>
+</p>
+
+<table style="width:100%" class="table-design">
+  <tr class="header-design">
+    <th class="header-element-design">Categoria</th>
+    <th class="header-element-design">Presupuesto</th>
+    <th class="header-element-design">Balance</th>
+  </tr>
+  <%i=2%>
+  <% @categories.each do |category|%>
+    <% if i%2==0 %>
+      <tr class="header-design">
+          <td class="normal-element-design"><%= link_to category.name, category%></td>
+          <td class="normal-element-design"><%= category.budget%></td>
+          <td class="normal-element-design"><%= category_balance_for category%></td>
+      </tr>
+    <%end%>
+    <%if i%2==1 %>
+      <tr class="header-design even-element-background">
+          <td class="normal-element-design"><%= link_to category.name, category%></td>
+          <td class="normal-element-design"><%= category.budget%></td>
+          <td class="normal-element-design"><%= category_balance_for category%></td>
+      </tr>
+    <%end%>
+    <%i=i+1%>
+  <% end%>
+</table>
+<%= link_to 'Agregar Categoria',new_category_path(id_plan: @plan.id) %>
+
+<%= link_to 'Edit', edit_plan_path(@plan) %> |
+<%= link_to 'Back', @user %>

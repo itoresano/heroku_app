@@ -1,0 +1,67 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Categoria:</strong>
+  <%= @category.name %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @category.description %>
+</p>
+
+<p>
+  <strong>Presupuesto:</strong>
+  <%= @category.budget %>
+</p>
+
+<p>
+  <strong>Total gastado:</strong>
+  <%= category_total_spent_for @category %>
+</p>
+
+<p>
+  <strong>Balance categoria:</strong>
+  <%= category_balance_for @category %>
+</p>
+
+<p>
+  <strong>Gastos no planificados:</strong>
+  <%= not_planned_spendings_for @category %>
+</p>
+
+<object>
+  <table style="width:100%" class="table-design">
+    <tr class="header-design even-element-background">
+      <th class="header-element-design">Nombre</th>
+      <th class="header-element-design">fecha</th>
+      <th class="header-element-design">Monto</th>
+      <th class="header-element-design">planeado</th>
+    </tr>
+    <% i=2%>
+    <% @spendings.each do |spending|%>
+      <% if i%2==0 %>
+        <tr class="header-design :hover">
+            <td class="normal-element-design"><%= link_to spending.name, spending%></td>
+            <td class="normal-element-design"><%= spending.date%></td>
+            <td class="normal-element-design"><%= spending.amount%></td>
+            <td class="normal-element-design"><%= spending.planned%></td>
+        </tr>
+      <%end%>
+      <% if i%2==1 %>
+        <tr class="header-design even-element-background">
+            <td class="normal-element-design"><%= link_to spending.name, spending%></td>
+            <td class="normal-element-design"><%= spending.date%></td>
+            <td class="normal-element-design"><%= spending.amount%></td>
+            <td class="normal-element-design"><%= spending.planned%></td>
+        </tr>
+      <%end%>
+      <%i=i+1%>
+    <% end%>
+  </table>
+</object>
+<%= link_to 'agregar gasto', new_spending_path(id_category: @category.id) %>
+
+
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', @plan %>
