@@ -1,45 +1,65 @@
-<h1>New User</h1>
+<div class="log-in">
+  <h1>New User</h1>
+    <div class="login-box">
+      <%= form_for(@user) do |f| %>
+        <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+            <ul>
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
 
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+      <div class="label-tag">
+        <%= f.label :name, "Nombre" %>
+      </div>
+      <div class="field">
+        <%= f.text_field :name, class:'form-control' %>
+      </div>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.password_field :password%><br>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirme contraseña"%><br>
-    <%= f.password_field :password_confirmation%><br>
-  </div>
-  <div class="field">
-    <%= f.label :date_birth %><br>
-    <%= f.date_select :date_birth %>
-  </div>
-  <div class="field">
-    <%= f.label :budget %><br>
-    <%= f.text_field :budget %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Crear mi cuenta"%>
-  </div>
-<% end %>
+      <div class="label-tag">
+        <%= f.label :email, "email" %>
+      </div>
+      <div class="field">
+        <%= f.text_field :email, class:'form-control'%>
+      </div>
 
-<%= link_to 'Back', users_path %>
+      <div class="label-tag">
+        <%= f.label :password, "Contraseña" %>
+      </div>
+      <div class="field">
+        <%= f.password_field :password, class:'form-control'%>
+      </div>
+
+      <div class="label-tag">
+        <%= f.label :password_confirmation, "Confirme contraseña"%>
+      </div>
+      <div class="field">
+        <%= f.password_field :password_confirmation, class:'form-control'%>
+      </div>
+
+      <div class="label-tag">
+        <%= f.label :date_birth, "Fecha de nacimiento" %><br>
+      </div>
+      <div class="field">
+        <%= f.date_select :date_birth %>
+      </div>
+
+      <div class="label-tag">
+        <%= f.label :budget , "presupuesto incial"%>
+      </div>
+      <div class="field">
+        <%= f.number_field :budget, class:'form-control'%>
+      </div>
+      <div class="button-box">
+        <%= f.submit "Crear mi cuenta", class:'button', id:'submit'%>
+      </div>
+    <% end %>
+
+    <%= link_to 'Back', users_path %>
+  </div>
+</div>

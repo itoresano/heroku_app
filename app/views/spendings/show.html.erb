@@ -1,27 +1,35 @@
 <p id="notice"><%= notice %></p>
+<div class="detalles-plans">
+  <p>
+    <strong>Name:</strong>
+    <%= @spending.name %>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @spending.name %>
-</p>
+  <p>
+    <strong>Descripcion:</strong>
+    <%= @spending.descrption %>
+  </p>
 
-<p>
-  <strong>Descrption:</strong>
-  <%= @spending.descrption %>
-</p>
+  <p>
+    <strong>Planeado:</strong>
+    <%if @spending.planned %>
+      <%="si"%>
+    <%else%>
+      <%="no"%>
+    <%end%>
+  </p>
+  <p>
+    <strong>Monto del gasto:</strong>
+    <%= @spending.amount %>
+  </p>
+  <p>
+    <strong>Fecha de transaccion:</strong>
+    <%= @spending.date %>
+  </p>
 
-<p>
-  <strong>Planned:</strong>
-  <%= @spending.planned %>
-</p>
-<p>
-  <strong>Amount:</strong>
-  <%= @spending.amount %>
-</p>
-<p>
-  <strong>Date:</strong>
-  <%= @spending.date %>
-</p>
+</div>
+
+
 
 <%= link_to 'Edit', edit_spending_path(@spending) %> |
 <%= link_to 'Back', @category %>

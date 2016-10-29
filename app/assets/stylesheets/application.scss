@@ -1,0 +1,132 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ /* Clases de tabla */
+.border{
+  border: 1px solid black;
+  padding-bottom: 50px;
+}
+
+.table-design{
+  text-align: left;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+
+.header-element-design{
+  border-right: 1px solid black;
+  height: 50px;
+  padding: 15px;
+  background-color: #4CAF50;
+}
+
+.normal-element-design{
+  border-right: 1px solid black;
+  height: 50px;
+  padding: 15px;
+}
+
+.even-element-background{
+  background-color: #f2f2f2;
+}
+
+
+.header-design{
+  border-bottom: 1px solid black;
+  width: 100;
+}
+/* Fin clases tabla*/
+
+
+/*clases layout*/
+body {
+  margin-top: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+header {
+  top: 0;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background: white;
+  border-bottom: 2px solid #43ab4f;
+  box-shadow: 0px 0px 5px 1px #777;
+  z-index: 2;
+}
+#logo img {
+  height: 70px;
+  float: left;
+}
+nav.layout-format, #logo {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+nav.layout-format{
+  margin-left: 20px;
+  right: 10px;
+  top: 27px;
+
+  position: absolute;
+  left: 135px;
+}
+
+.font-style{
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  font-family: sans-serif;
+  font-size: 150%;
+  color: green;
+  background-color: white;
+  padding: 10px 20px 10px 20px;
+  border-right: 1px solid grey;
+  transition: all 0.4s;
+  &:hover{
+    background: #c3fac3;
+    cursor: pointer;
+  }
+  &:visited{
+    text-decoration: none;
+    color: green;
+  }
+  &:nth-child(1){
+    margin-left: 20px;
+  }
+  &:last-child{
+    float: right;
+  }
+  &:nth-last-child(2){
+    float: right;
+    border-right: none;
+  }
+  &:nth-last-child(3){
+    border-right: none;
+  }
+
+}
+
+
+.row{
+  column-fill: auto;
+}
+.to-right{
+  padding-left: 10%;
+}
+.a-lot-to-right{
+  padding-left: 30%;
+}

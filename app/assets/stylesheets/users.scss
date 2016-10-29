@@ -1,3 +1,53 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user-box {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.profile-pic-box{
+  margin-right: 100px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  padding: 40px;
+}
+
+.gravatar {
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  border: 4px solid #43ab4f;
+  box-shadow: 0px 0px 10px 2px #777;
+}
+
+.user-data-box, .user-data-box-2 {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+
+
+.tag, .tag-2{
+  font-size: 15px;
+  background: white;
+  border-bottom: 2px solid #43ab4f;
+  padding: 15px 70px 10px 0px;
+}
+
+.tag-2{
+  padding-right: 140px;
+}
+
+div.user-data-box div p {
+  display: inline-block;
+}

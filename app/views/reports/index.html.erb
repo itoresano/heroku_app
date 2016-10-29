@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<h1>Reportes realizados por el usuario <%= current_user.name %></h1>
+<div class="current-plans">
+  <% @reports.each do |report|%>
+    <div class="button-container">
+    <%= link_to report.name, report, class:'button-plan'%>
+      <div class="button-container-content">
+      <div><%= report.creation_date %></div>
+      </div>
+      </div>
+    <%end%>
+  <div class="button-container">
+    <%= link_to "+", new_report_path(id_user: current_user.id), class:'button-plan', id:'mas' %>
+  </div>
+
+</div>
+
+
+
+<br>
+
+<%= link_to "Crear reporte", new_report_path(id_user: current_user.id) %>

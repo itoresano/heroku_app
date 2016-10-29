@@ -1,62 +1,64 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Foto de perfil:</strong>
-</p>
+<div class="user-box">
+  <div class="profile-pic-box">
+    <div>
+      <%= gravatar_for @user %>
+    </div>
+  </div>
+  <div class="user-data-box">
+    <p class="tag">
+      Nombre:
+    </p>
+    <p class="tag">
+      Email:
+    </p>
+    <p class="tag">
+      Fecha de Nacimiento:
+    </p>
+    <p class="tag">
+      Presupuesto:
+    </p>
+    <p class="tag">
+      Total gastado:
+    </p>
+    <p class="tag">
+      Balance:
+    </p>
+  </div>
 
-<p>
-  <%= gravatar_for @user %>
-</p>
+  <div class="user-data-box-2">
+    <p class="tag-2">
+      <%= @user.name %>
+    </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+    <p class="tag-2">
+      <%= @user.email %>
+    </p>
 
-<p>
-  <strong>Date birth:</strong>
-  <%= @user.date_birth %>
-</p>
 
-<p>
-  <strong>Presupuesto:</strong>
-  <%= @user.budget %>
-</p>
+    <p class="tag-2">
+      <%= @user.date_birth %>
+    </p>
 
-<p>
-  <strong>Total gastado:</strong>
-  <%= user_total_spent_for @user %>
-</p>
 
-<p>
-  <strong>Balance:</strong>
-  <%= user_balance_for @user %>
-</p>
+    <p class="tag-2">
+      <%= @user.budget %>
+    </p>
 
-<h1>Planes para <%= @user.name %></h1>
-<table style="width:100%" class="table-design">
-  <tr class="header-design">
-    <th class="header-element-design">Nombre</th>
-    <th class="header-element-design">Fecha de inicio</th>
-    <th class="header-element-design">Presupuesto</th>
-    <th class="header-element-design">Balance</th>
-  </tr>
-  <% @plans.each do |plan|%>
-  <tr class="header-design">
-    <td class="normal-element-design"><%= link_to plan.name, plan%></td>
-    <td class="normal-element-design"><%= plan.start_date%></td>
-    <td class="normal-element-design"><%= plan.budget%></td>
-    <td class="normal-element-design"><%= plan_balance_for plan%></td>
 
-  </tr>
-  <% end%>
-</table>
-<%= link_to "Agregar nuevo plan", new_plan_path(id_user: @user.id) %>
+    <p class="tag-2">
+      <%= user_total_spent_for @user %>
+    </p>
+
+
+    <p class="tag-2">
+      <%= user_balance_for @user %>
+    </p>
+  </div>
+</div>
+
 
 <h1>Principales gastos</h1>
 

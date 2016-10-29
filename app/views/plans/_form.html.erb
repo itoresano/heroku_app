@@ -11,20 +11,35 @@
     </div>
   <% end %>
 <%= simple_form_for @plan, :html => { :class => 'form-horizontal' , :id => 'form-lessons'} do |f| %>
-  <div class="field">
-    <%= f.input :name %><br>
+
+  <div class="label-tag">
+    <%= f.label :name, "Nombre" %>
   </div>
   <div class="field">
-    <%= f.input :budget %><br>
+    <%= f.text_field :name, class:'form-control'%><br>
+  </div>
+
+  <div class="label-tag">
+    <%= f.label :budget, "Presupuesto" %>
   </div>
   <div class="field">
-    <%= f.input :start_date %><br>
+    <%= f.text_field :budget , class:'form-control' %><br>
+  </div>
+
+  <div class="label-tag">
+    <%= f.label :start_date, "Fecha de inicio" %>
   </div>
   <div class="field">
-    <%= f.input :description %><br>
+    <%= f.date_select :start_date , class:'form-control' %>
+  </div>
+  <div class="label-tag">
+    <%= f.label :description, "Descripcion" %>
+  </div>
+  <div class="field">
+    <%= f.text_field :description, class:'form-control' %><br>
   </div>
   <%= hidden_field_tag(:id_user, params[:id_user]) %>
-  <div class="actions">
-    <%= f.button :submit, "Guardar" %>
+  <div class="button-box">
+    <%= f.button :submit, "Guardar", class:'button', id:'submit' %>
   </div>
 <%end%>

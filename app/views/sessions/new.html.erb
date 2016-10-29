@@ -1,19 +1,29 @@
 <% provide(:title, "Iniciar sesions") %>
+
+<div class="log-in">
 <h1>Iniciar sesion</h1>
 
 
-<div class>
-  <div class>
+  <div class="login-box">
     <%= form_for(:session, url: login_path) do |f| %>
-
-      <%= f.label :email %>
+    <div class="label-tag">
+      <%= f.label :email %>:
+    </div>
+    <div class="field">
       <%= f.email_field :email, class: 'form-control' %>
-
-      <%= f.label :password %>
+    </div>
+    <div class="label-tag">
+      <%= f.label :password %>:
+      <%= link_to "(forgot password?)", new_password_reset_path %>
+    </div>
+    <div class="field">
       <%= f.password_field :password, class: 'form-control' %>
-
-      <%= f.submit "Ingresar"%>
+    </div>
+    <div class="button-box">
+      <%= f.submit "Ingresar", class:'button'%>
+    </div>
     <%end%>
-    <p> ¿Nuevo usuario? <%= link_to "Hagase una cuenta ahora!", signup_path %></p>
+    <p>  <%= link_to "Hagase una cuenta ahora!", signup_path %></p>
   </div>
+<div>
 </div>

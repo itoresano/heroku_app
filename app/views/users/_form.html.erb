@@ -11,23 +11,50 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="label-tag">
+    <%= f.label :name, "Nombre" %>
   </div>
   <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.text_field :name, class:'form-control' %>
+  </div>
+
+  <div class="label-tag">
+    <%= f.label :email, "email" %>
   </div>
   <div class="field">
-    <%= f.label :date_birth %><br>
+    <%= f.text_field :email, class:'form-control'%>
+  </div>
+
+
+  <div class="label-tag">
+    <%= f.label :date_birth, "Fecha de nacimiento" %><br>
+  </div>
+  <div class="field">
     <%= f.date_select :date_birth %>
   </div>
-  <div class="field">
-    <%= f.label :budget %><br>
-    <%= f.text_field :budget %>
+
+  <div class="label-tag">
+    <%= f.label :budget , "presupuesto"%>
   </div>
-  <div class="actions">
-    <%= f.submit "Crear mi cuenta"%>
+  <div class="field">
+    <%= f.number_field :budget, class:'form-control'%>
+  </div>
+
+  <div class="label-tag">
+    <%= f.label :password %>
+  </div>
+  <div class="field">
+    <%= f.password_field :password, class: 'form-control' %>
+  </div>
+
+  <div class="label-tag">
+    <%= f.label :password_confirmation %>
+  </div>
+  <div class="field">
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
+  </div>
+
+  <div class="button-box">
+    <%= f.submit "Guardar", class:'button', id:'submit'%>
   </div>
 <% end %>

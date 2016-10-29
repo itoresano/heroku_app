@@ -1,3 +1,93 @@
 // Place all the styles related to the Plans controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.current-plans{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-bottom: 1px solid black;
+  padding: 20px;
+}
+.button-container{
+  display:  inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  min-width: 120px;
+}
+
+.button-plan {
+  display:inline-block;
+  padding: 20px 10px 10px 10px;
+  background-color: #4CAF50;
+  border-radius: 5px;
+  height: 35px;
+  min-width: 120px;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  &:visited{
+    color: white;
+  }
+}
+
+h1 {
+  text-align: center;
+}
+
+#mas {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.button-container-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 120px;
+    z-index: 1;
+    border: 1px solid #43ab4f;
+    box-shadow: 0px 2px 5px 1px #43ab4f;
+    border-radius: 5px;
+
+}
+.button-container-content div{
+  padding: 16px;
+  border-bottom: 1px solid grey;
+  text-decoration: none;
+  &:hover{
+    background-color: #f2f2f2;
+  }
+
+}
+
+.button-container:hover .button-container-content {
+    display: block;
+}
+
+.detalles-plans{
+  width: 30%;
+  margin-left: 30px;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border: 2px solid #43ab4f;
+  box-shadow: 0px 0px 5px 1px #777;
+  border-radius:10px;
+  padding: 5px;
+  &:last-child{
+    border-bottom: none;
+  }
+}
+.detalles-plans p{
+  font-size: 15px;
+  border-bottom: 2px solid #f2f2f2;
+  &:hover{
+    background: #c3fac3;
+  }
+}

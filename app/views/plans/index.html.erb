@@ -1,39 +1,41 @@
 <p id="notice"><%= notice %></p>
 
+
+<div class="detalles-plans">
 <p>
-  <strong>Presupuesto:</strong>
-  <%= current_user.budget %>
+  Presupuesto: <%= current_user.budget %>
 </p>
 
 <p>
-  <strong>Total gastado:</strong>
-  <%= user_total_spent_for current_user %>
+  Total gastado: <%= user_total_spent_for current_user %>
 </p>
 
 <p>
-  <strong>Balance:</strong>
-  <%= user_balance_for current_user %>
+  Balance: <%= user_balance_for current_user %>
 </p>
+
+</div>
 
 <h1>Planes para <%= current_user.name %></h1>
-<table style="width:100%" class="table-design">
-  <tr class="header-design">
-    <th class="header-element-design">Nombre</th>
-    <th class="header-element-design">Fecha de inicio</th>
-    <th class="header-element-design">Presupuesto</th>
-    <th class="header-element-design">Balance</th>
-  </tr>
-  <% @plans.each do |plan|%>
-  <tr class="header-design">
-    <td class="normal-element-design"><%= link_to plan.name, plan%></td>
-    <td class="normal-element-design"><%= plan.start_date%></td>
-    <td class="normal-element-design"><%= plan.budget%></td>
-    <td class="normal-element-design"><%= plan_balance_for plan%></td>
 
-  </tr>
-  <% end%>
-</table>
-<%= link_to "Agregar nuevo plan", new_plan_path(id_user: current_user.id) %>
+<div class="current-plans">
+  <% @plans.each do |plan|%>
+    <div class="button-container">
+    <%= link_to plan.name, plan, class:'button-plan'%>
+      <div class="button-container-content">
+        <%plan.categories.each do |cat| %>
+      <div><%= link_to cat.name, cat%></div>
+        <%end%>
+      <div><%= plan_balance_for plan %></div>
+      </div>
+      </div>
+    <%end%>
+  <div class="button-container">
+    <%= link_to "+", new_plan_path(id_user: current_user.id), class:'button-plan', id:'mas' %>
+  </div>
+
+</div>
+
 
 
 
