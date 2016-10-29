@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-  <%= simple_form_for @spending, :html => { :class => 'form-horizontal' , :id => 'form-lessons'} do |f| %>
+  <%= simple_form_for @spending, :html => { :class => 'form-horizontal' , :id => 'form-lessons', multipart: true} do |f| %>
 
   <div class="label-tag">
     <%= f.label :name, "Nombre" %>
@@ -45,6 +45,12 @@
   </div>
   <div class="field">
      <%= f.input :planned, class:'form-control' %>
+  </div>
+  <div class="label-tag">
+    <%= f.label :image, "Boleta" %>
+  </div>
+  <div class="field">
+    <%= f.file_field :image, class:'form-control'%>
   </div>
 
      <%= hidden_field_tag(:id_category, params[:id_category]) %>

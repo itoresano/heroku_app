@@ -26,7 +26,10 @@
     <strong>Fecha de transaccion:</strong>
     <%= @spending.date %>
   </p>
-
+  <p>
+    <strong>Imagen de la boleta:</strong>
+    <br/>
+    <%= image_tag @spending.image.url(:medium) %>
 </div>
 
 

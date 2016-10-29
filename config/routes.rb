@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  # get 'password_resets/new'
-  #
-  # get 'password_resets/edit'
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
 
   resources :reports
   get '/signup', to: 'users#new'
@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   resources :categories
   resources :plans
   resources :users
-  resources :password_resets,     only: [:new, :create, :edit, :update]
   root 'plans#index'
+  resources :password_resets,     only: [:new, :create, :edit, :update]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

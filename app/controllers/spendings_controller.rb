@@ -85,7 +85,7 @@ class SpendingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def spending_params
-      params.require(:spending).permit(:name, :descrption, :planned, :date, :amount)
+      params.require(:spending).permit(:name, :descrption, :planned, :date, :amount, :image)
     end
 
     def get_category
